@@ -8,6 +8,60 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html { scroll-behavior: smooth; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    section[id] { scroll-margin-top: 76px; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0, 60, 140, 0.12);
+    }
+
+    .nav-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav .brand {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0077ff;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #1a2233;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .nav-links a:hover { color: #0077ff; }
+
+    @media (max-width: 700px) {
+      .nav-inner { padding: 12px 16px; gap: 10px; }
+      .nav .brand { font-size: 17px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 14px; }
+    }
+
     body {
       font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
       color: #1a2233;
@@ -125,14 +179,29 @@
       gap: 20px;
     }
 
-    .works-gallery img {
+    .work-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 60, 140, 0.1);
+      text-align: left;
+    }
+
+    .work-card img {
       width: 100%;
       height: 240px;
       object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(0, 60, 140, 0.1);
       display: block;
     }
+
+    .work-card .info { padding: 18px 20px 22px; }
+
+    .work-card h3 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .work-card p { color: #56607a; }
 
     @media (max-width: 700px) {
       .works-gallery {
@@ -150,6 +219,52 @@
       width: 100%;
       height: auto;
       display: block;
+    }
+
+    .faq {
+      max-width: 760px;
+      margin: 64px auto 0;
+      padding: 0 20px;
+    }
+
+    .faq h2 {
+      font-size: 28px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .faq details {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 60, 140, 0.1);
+      margin-bottom: 14px;
+    }
+
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 20px;
+      font-weight: 600;
+      font-size: 17px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .faq summary::-webkit-details-marker { display: none; }
+
+    .faq summary::after {
+      content: "+";
+      color: #0077ff;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .faq details[open] summary::after { content: "−"; }
+
+    .faq details p {
+      padding: 0 20px 18px;
+      color: #56607a;
     }
 
     .contact {
@@ -182,6 +297,17 @@
 </head>
 <body>
 
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#">Baxtiyor</a>
+      <div class="nav-links">
+        <a href="#ishlarim">Ishlarim</a>
+        <a href="#savol-javob">Savol-javob</a>
+        <a href="#boglaning">Bog'laning</a>
+      </div>
+    </div>
+  </nav>
+
   <header class="hero">
     <span class="badge">PVX va alyumin rom-eshik ustasi</span>
     <h1>Baxtiyor</h1>
@@ -212,12 +338,30 @@
     </div>
   </section>
 
-  <section class="works">
-    <h2>Bajarilgan ishlar</h2>
+  <section class="works" id="ishlarim">
+    <h2>Ishlarim</h2>
     <div class="works-gallery">
-      <img src="images/ish1.jpg" alt="Bajarilgan ish 1">
-      <img src="images/ish2.jpg" alt="Bajarilgan ish 2">
-      <img src="images/ish3.jpg" alt="Bajarilgan ish 3">
+      <div class="work-card">
+        <img src="images/ish1.jpg" alt="Kulrang eshik, xonadonga o'rnatilgan">
+        <div class="info">
+          <h3>Kulrang eshik</h3>
+          <p>Xonadonga o'rnatilgan.</p>
+        </div>
+      </div>
+      <div class="work-card">
+        <img src="images/ish2.jpg" alt="Jigarrang naqshli qo'sh kirish eshigi">
+        <div class="info">
+          <h3>Qo'sh kirish eshigi</h3>
+          <p>Jigarrang, naqshli.</p>
+        </div>
+      </div>
+      <div class="work-card">
+        <img src="images/ish3.jpg" alt="Oq PVX rom-oynalar to'plami (Akfa)">
+        <div class="info">
+          <h3>Oq PVX rom-oynalar</h3>
+          <p>Akfa profilidan to'plam.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -225,7 +369,27 @@
     <img src="images/banner.jpg" alt="Kafolat-YeS reklama banneri">
   </div>
 
-  <section class="contact">
+  <section class="faq" id="savol-javob">
+    <h2>Savol-javob</h2>
+    <details>
+      <summary>Narx qancha turadi? O'lchashga pul olasizmi?</summary>
+      <p>Narx material va o'lcham asosida individual hisoblanadi. O'lchash uchun bepul, o'zim joyingizga boraman.</p>
+    </details>
+    <details>
+      <summary>Buyurtma necha kunda tayyor bo'ladi?</summary>
+      <p>Odatda 7-10 ish kuni ichida, buyurtma hajmiga qarab.</p>
+    </details>
+    <details>
+      <summary>Kafolat berasizmi? Necha yilga?</summary>
+      <p>Ha, barcha ishlarimga 3 yil kafolat beraman.</p>
+    </details>
+    <details>
+      <summary>Qarshidan tashqariga ham borasizmi?</summary>
+      <p>Ha, viloyat bo'ylab xizmat ko'rsataman.</p>
+    </details>
+  </section>
+
+  <section class="contact" id="boglaning">
     <h2>Bog'laning</h2>
     <p>Qo'ng'iroq qiling yoki Telegramda yozing — tez javob beraman.</p>
     <p class="hours">🕐 Ish vaqti: 24/7 (kunu tun)</p>

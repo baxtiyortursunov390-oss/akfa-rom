@@ -1,9 +1,17 @@
 # Loyiha: Baxtiyorning shaxsiy sayti
 
 ## Loyiha nima
-- Baxtiyorning (PVX va alyumin rom-eshik ustasi, Qarshi, Ko'kdala) shaxsiy tanishtiruv sayti.
+- Baxtiyorning (PVX va alyumin rom-eshik ustasi, Qarshi, Ko'kdala) biznesi uchun shaxsiy tanishtiruv (vizitka) sayti: bitta HTML fayl (`index.html`).
 - Sayt mijozlar uchun: ular xizmatlarni ko'radi, bajarilgan ishlarni ko'radi va qo'ng'iroq yoki Telegram orqali bog'lanadi.
 - Asosiy maqsad: tashrif buyurgan odam tezda bog'lanishi.
+
+## Loyiha tuzilishi
+- `index.html`: butun sayt.
+- `images/`: `banner.jpg`, `ish1.jpg`, `ish2.jpg`, `ish3.jpg`.
+- `run.bat`: saytni Chrome'da ochadi. `.gitignore`: `.env` va keraksiz fayllarni git'dan chiqaradi.
+
+## Jonli havola
+- https://vocal-fairy-3a7aa5.netlify.app. Netlify Drop orqali qo'lda yangilanadi.
 
 ## Uslub qoidalari
 - Ranglar: ko'k `#0077ff`, och ko'k `#00c6ff`, sariq `#ffb800`, matn `#1a2233`, fon `#f4f7fb`. Yangi rang kerak bo'lsa, avval so'ra.
@@ -22,3 +30,8 @@
 - Kichik qadamlar bilan ishla: bir vaqtda bitta o'zgarish, keyin natijani ko'rsat.
 - Mavjud kod uslubiga moslash; so'ralmagan narsani qo'shma yoki o'chirma.
 - Aloqa ma'lumotlarini (telefon, Telegram, manzil) faqat foydalanuvchi aytganda o'zgartir.
+
+## Qat'iy qoidalar
+- Har qanday o'zgarishdan keyin natijani skrinshot bilan ko'rsat (kompyuter + telefon o'lchamida).
+- Mijozlar sharhi (testimonial) bo'limiga hech qachon o'ylab topilgan ism yoki matn yozilmaydi. Faqat foydalanuvchi bergan haqiqiy matn ishlatiladi.
+- O'zgarishdan keyin, aniq so'ralmaguncha, git commit yoki push QILINMAYDI.
