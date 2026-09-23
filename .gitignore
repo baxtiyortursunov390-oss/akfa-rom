@@ -1,0 +1,12 @@
+# Maxfiy ma'lumotlar
+.env
+.env.*
+
+# Tizim va muharrir fayllari
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.log
+*.tmp
