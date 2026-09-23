@@ -51,6 +51,7 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 16px;
+      transition: color 0.2s;
     }
 
     .nav-links a:hover { color: #0077ff; }
@@ -185,6 +186,29 @@
       overflow: hidden;
       box-shadow: 0 12px 30px rgba(0, 60, 140, 0.1);
       text-align: left;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    @media (hover: hover) {
+      .work-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 20px 40px rgba(0, 60, 140, 0.2);
+      }
+    }
+
+    @keyframes work-in {
+      from { opacity: 0; translate: 0 30px; }
+      to { opacity: 1; translate: 0 0; }
+    }
+
+    @supports (animation-timeline: view()) {
+      @media (prefers-reduced-motion: no-preference) {
+        .work-card {
+          animation: work-in linear both;
+          animation-timeline: view();
+          animation-range: entry 0% entry 100%;
+        }
+      }
     }
 
     .work-card img {
